@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atletický klub – demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark">AK</span>
+        <span class="brand-text">Atletický klub</span>
+      </a>
+
+      <nav class="nav" aria-label="Hlavní navigace">
+        <a href="#start">Start</a>
+        <a href="#aktuality">Aktuality</a>
+        <a href="#programy">Programy</a>
+        <a href="#dokumenty">Dokumenty</a>
+        <a href="#kontakty">Kontakty</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Otevřít menu" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main id="start">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Atletika pro děti i dospělé</h1>
+          <p>
+            Tréninky, závody, nábory, informace pro rodiče a členy. Přehledně na jednom místě.
+          </p>
+          <div class="hero-cta">
+            <a class="btn" href="#aktuality">Aktuality</a>
+            <a class="btn btn-ghost" href="#kontakty">Kontakt</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-title">Rozpis haly / stadionu</div>
+          <p class="muted">
+            Vlož sem odkaz na externí kalendář (např. Google Calendar / Softkom).
+          </p>
+          <a class="link" href="#" target="_blank" rel="noopener">Otevřít rozpis</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="aktuality" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Aktuality</h2>
+          <a class="link" href="#">Všechny aktuality</a>
+        </div>
+
+        <div class="grid grid-3" id="newsGrid">
+          <!-- Novinky se renderují JS (viz app.js), ale můžeš je psát i staticky -->
+        </div>
+      </div>
+    </section>
+
+    <section id="programy" class="section alt">
+      <div class="container">
+        <h2>Programy</h2>
+        <p class="muted">Dlaždice pro hlavní sekce oddílu (stejný princip jako na Vítkovicích).</p>
+
+        <div class="grid grid-5">
+          <a class="tile" href="#">
+            <div class="tile-title">Přípravka</div>
+            <div class="tile-text">Nábor dětí, informace pro rodiče.</div>
+          </a>
+          <a class="tile" href="#">
+            <div class="tile-title">Žactvo</div>
+            <div class="tile-text">Tréninky, skupiny, sezóna.</div>
+          </a>
+          <a class="tile" href="#">
+            <div class="tile-title">Vrhačská akademie</div>
+            <div class="tile-text">Specializace, trenéři, program.</div>
+          </a>
+          <a class="tile" href="#">
+            <div class="tile-title">Kondiční atletika</div>
+            <div class="tile-text">Kondice pro veřejnost i sportovce.</div>
+          </a>
+          <a class="tile" href="#">
+            <div class="tile-title">Rodiče v akci</div>
+            <div class="tile-text">Pohyb a komunita.</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="dokumenty" class="section">
+      <div class="container">
+        <h2>Dokumenty</h2>
+        <div class="card">
+          <ul class="list">
+            <li><a class="link" href="#">Přihláška do oddílu (PDF)</a></li>
+            <li><a class="link" href="#">Pravidla / řád oddílu</a></li>
+            <li><a class="link" href="#">Souhlas GDPR</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakty" class="section alt">
+      <div class="container">
+        <h2>Kontakty</h2>
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Atletický klub</h3>
+            <p class="muted">
+              Ulice 123, 370 01 Město<br />
+              IČ: 00000000
+            </p>
+            <p>
+              E-mail: <a class="link" href="mailto:info@klub.cz">info@klub.cz</a><br />
+              Telefon: <a class="link" href="tel:+420700000000">+420 700 000 000</a>
+            </p>
+          </div>
+          <div class="card">
+            <h3>Vedení</h3>
+            <ul class="list">
+              <li>Předseda: Jméno – <a class="link" href="mailto:predseda@klub.cz">predseda@klub.cz</a></li>
+              <li>Šéftrenér: Jméno – <a class="link" href="mailto:trener@klub.cz">trener@klub.cz</a></li>
+              <li>Administrativa: Jméno – <a class="link" href="mailto:office@klub.cz">office@klub.cz</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="muted">© <span id="year"></span> Atletický klub</div>
+      <div class="footer-links">
+        <a class="link" href="#start">Nahoru</a>
+        <a class="link" href="#">Přihlášení</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
