@@ -11,24 +11,49 @@ function formatDate(iso) {
 
 function renderNews() {
   const grid = document.getElementById("newsGrid");
-  grid.innerHTML = news.map(item => `
-    <article class="news">
-      <h3 class="news-title">${item.title}</h3>
-      <div class="news-meta">${formatDate(item.date)}</div>
-      <p class="news-text">${item.text}</p>
-    </article>
-  `).join("");
+  if (!grid) return;
+
+  grid.innerHTML = news
+    .map(
+      (item) => `
+      <article class="news">
+        <h3 class="news-title">${item.title}</h3>
+        <div class="news-meta">${formatDate(item.date)}</div>
+        <p class="news-text">${item.text}</p>
+      </article>
+    `
+    )
+    .join("");
 }
 
 function setupNav() {
   const btn = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".nav");
+  if (!btn || !nav) return;
+
   btn.addEventListener("click", () => {
     const open = nav.classList.toggle("is-open");
     btn.setAttribute("aria-expanded", String(open));
   });
+
+  // zavři menu po kliknutí na odkaz (mobil)
+  nav.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+    });
+  });
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
-renderNews();
-setupNav();
+function setYear() {
+  const el = document.getElementById("year");
+  if (!el) return;
+  el.textContent = new Date().getFullYear();
+}
+
+// spustit až po načtení DOM (aby nevznikaly null chyby)
+document.addEventListener("DOMContentLoaded", () => {
+  setYear();
+  renderNews();
+  setupNav();
+});
