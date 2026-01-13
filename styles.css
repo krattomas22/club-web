@@ -1,138 +1,110 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-    --primary: #003366; /* Modrá */
-    --accent: #e30613;  /* Červená */
+    --primary: #003366; /* Hlavní modrá */
+    --accent: #e30613;  /* Červená pro detaily */
+    --light-gray: #f0f2f5; /* Pěkná světle šedá pro aktuality */
     --white: #ffffff;
     --dark: #222222;
-    --gray: #f4f4f4;
 }
 
-body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--gray); color: var(--dark); }
-h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--white); color: var(--dark); }
+h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margin-top: 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
 /* 1. NAVIGACE */
 .navbar {
     position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 51, 102, 0.95); /* Průhledná modrá */
+    top: 0; width: 100%;
+    background: var(--primary); /* Plná modrá lišta */
     color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    box-sizing: border-box;
-    z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 40px; box-sizing: border-box; z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .logo { font-size: 24px; font-weight: bold; }
 .logo span { color: var(--accent); }
-
-.nav-links { list-style: none; display: flex; gap: 20px; }
-.nav-links a { color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 14px; }
+.nav-links { list-style: none; display: flex; gap: 20px; margin: 0; }
+.nav-links a { color: white; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; }
 .nav-links a:hover { color: var(--accent); }
 .highlight { border: 2px solid var(--accent); padding: 5px 10px; border-radius: 4px; }
 
-/* 2. HERO SLIDER (Přes celou obrazovku) */
+/* 2. SLIDER (Půlka obrazovky) */
 .hero-section {
     position: relative;
-    height: 100vh; /* 100% výšky okna */
+    height: 50vh; /* 50% výšky okna */
+    min-height: 400px; /* Aby to nebylo moc úzké na mobilech */
     width: 100%;
     overflow: hidden;
+    margin-top: 60px; /* Aby slider nelezl pod menu */
 }
 
 .slider { height: 100%; width: 100%; }
 .slide {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center;
+    opacity: 0; transition: opacity 1s ease-in-out;
+    display: flex; align-items: center; justify-content: center;
 }
 .slide.active { opacity: 1; }
+.slide-content h1 { color: white; font-size: 50px; text-shadow: 2px 2px 10px rgba(0,0,0,0.7); }
 
-/* AKTUALITY (Plovoucí panel dole) */
-.news-overlay {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    max-width: 1000px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
-    border-top: 5px solid var(--accent);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+/* 3. AKTUALITY (Šedý pás) */
+.news-section {
+    background-color: var(--light-gray); /* Světle šedá */
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
 }
-
-.news-items { display: flex; gap: 20px; overflow-x: auto; }
-.news-item { flex: 1; border-left: 3px solid var(--primary); padding-left: 10px; }
-.news-item .date { color: var(--accent); font-weight: bold; font-size: 12px; }
-.news-item p { margin: 5px 0 0; font-size: 14px; font-weight: 500; }
-
-/* 3. Obecné Sekce */
-.section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-
-/* Kategorie Grid */
-.grid-container {
+.news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
+    margin-top: 20px;
 }
-.card { padding: 30px; color: white; border-radius: 8px; transition: 0.3s; }
+.news-item {
+    background: white;
+    padding: 20px;
+    border-left: 5px solid var(--primary);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.date { color: var(--accent); font-weight: bold; font-size: 0.9rem; }
+
+/* 4. OSTATNÍ SEKCE */
+.section { padding: 60px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
+.bg-blue { 
+    background-color: var(--primary); 
+    color: white; 
+    width: 100%; 
+    max-width: 100%; /* Roztažení přes celou šířku */
+}
+
+/* Karty skupin */
+.grid-container {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+}
+.card { padding: 30px; color: white; border-radius: 4px; transition: 0.3s; }
 .card:hover { transform: translateY(-5px); }
-.blue { background: var(--primary); }
-.red { background: var(--accent); }
+.blue { background: #004a99; }
+.dark { background: #002244; }
 
 /* Disciplíny */
-.disciplines-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
+.disciplines-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .disciplines-grid span {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    color: var(--primary);
+    background: white; color: var(--primary);
+    padding: 8px 20px; border-radius: 20px; font-weight: bold;
 }
 
-/* Statistiky */
+/* Statistiky a tlačítka */
 .stats-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 .stat-btn {
-    padding: 20px 40px;
-    background: var(--dark);
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
+    padding: 15px 30px; background: var(--primary); color: white;
+    text-decoration: none; font-weight: bold; border-radius: 4px;
 }
 .stat-btn:hover { background: var(--accent); }
 
-/* Cesta atleta (Timeline) */
-.timeline {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 30px;
-}
-.step {
-    background: var(--primary);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-.arrow { font-size: 20px; color: var(--accent); }
+/* Timeline */
+.timeline { font-size: 1.2rem; font-weight: bold; color: var(--primary); margin-top: 20px; }
+.step { background: var(--light-gray); padding: 5px 15px; border-radius: 5px; color: var(--dark); }
+
+footer { background: var(--dark); color: white; text-align: center; padding: 20px; margin-top: 50px; }
