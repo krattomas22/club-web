@@ -3,52 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tvůj Sportovní Klub</title>
+    <title>Atletický Klub</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="top-bar">
-        <div class="container">
-            <span>📧 info@tvujklub.cz</span>
-            <span>📞 +420 123 456 789</span>
-        </div>
-    </div>
+    <nav class="navbar">
+        <div class="logo">KLUB<span>WEB</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Domů</a></li>
+            <li><a href="#">Kontakty</a></li>
+            <li><a href="#">Dokumenty</a></li>
+            <li><a href="#">Aktuality</a></li>
+            <li><a href="#" class="highlight">Klubové oblečení</a></li>
+        </ul>
+    </nav>
 
-    <header>
-        <div class="container navbar">
-            <div class="logo">TVŮJ<span>LOGO</span></div>
-            <nav>
-                <ul>
-                    <li><a href="#">Aktuality</a></li>
-                    <li><a href="#">Klub</a></li>
-                    <li><a href="#">Tréninky</a></li>
-                    <li><a href="#">Kontakty</a></li>
-                </ul>
-            </nav>
+    <header class="hero-section">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1530549387631-f31f984532a9?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1552674605-46d5c4e405f8?auto=format&fit=crop&w=1920&q=80');"></div>
+        </div>
+
+        <div class="news-overlay">
+            <h2>🔥 Rychlé Aktuality</h2>
+            <div class="news-items">
+                <div class="news-item">
+                    <span class="date">Dnes</span>
+                    <p>Trénink přípravky zrušen kvůli dešti.</p>
+                </div>
+                <div class="news-item">
+                    <span class="date">Včera</span>
+                    <p>Nové klubové oblečení je skladem!</p>
+                </div>
+                <div class="news-item">
+                    <span class="date">10.1.</span>
+                    <p>Výsledky ze závodů v Praze jsou online.</p>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>KDE SE RODÍ HVĚZDY</h1>
-            <p>Přidej se k našemu týmu ještě dnes!</p>
-            <a href="#" class="btn">Více o nás</a>
+    <section class="section categories">
+        <h2>Naše tréninkové skupiny</h2>
+        <div class="grid-container">
+            <div class="card blue"><h3>Přípravka</h3><p>Pro nejmenší talenty</p></div>
+            <div class="card blue"><h3>Žactvo</h3><p>Budoucí šampioni</p></div>
+            <div class="card red"><h3>Skupina 1</h3><p>Výkonnostní atletika</p></div>
+            <div class="card red"><h3>Skupina 2</h3><p>Specializace</p></div>
+            <div class="card red"><h3>Skupina 3</h3><p>Vrcholový sport</p></div>
         </div>
     </section>
 
-    <section class="quick-links container">
-        <div class="card blue"><h3>PŘIHLÁŠKA</h3></div>
-        <div class="card red"><h3>ROZPIS HALY</h3></div>
-        <div class="card green"><h3>DOKUMENTY</h3></div>
+    <section class="section disciplines">
+        <h2>Co je atletika?</h2>
+        <div class="disciplines-grid">
+            <span>Běhy 100m, 200m</span>
+            <span>Běh 400m</span>
+            <span>Běh 800m, 1500m</span>
+            <span>Vytrvalost 3km-10km</span>
+            <span>Chůze 20km, 50km</span>
+            <span>Sedmiboj (Ženy)</span>
+            <span>Desetiboj (Muži)</span>
+            <span>Štafety 4x100, 4x400</span>
+            <span>Trojskok</span>
+            <span>Skok do výšky</span>
+            <span>Hod diskem</span>
+            <span>Hod oštěpem</span>
+            <span>Vrh koulí</span>
+            <span>Hod kladivem</span>
+            <span>Skok o tyči</span>
+            <span>Maraton</span>
+            <span>Steeplechase</span>
+            <span>Překážky</span>
+            <span>Skok do dálky</span>
+        </div>
+    </section>
+
+    <section class="section stats">
+        <h2>Statistiky oddílu</h2>
+        <div class="stats-container">
+            <a href="#" class="stat-btn">🏆 Rekordy klubu</a>
+            <a href="#" class="stat-btn">📊 Tabulky 2025</a>
+            <a href="#" class="stat-btn">🥇 Historické úspěchy</a>
+        </div>
+    </section>
+
+    <section class="section pathway">
+        <h2>Cesta atleta</h2>
+        <p>Jak se u nás roste?</p>
+        <div class="timeline">
+            <div class="step">Minipřípravka</div>
+            <div class="arrow">➡</div>
+            <div class="step">Přípravka</div>
+            <div class="arrow">➡</div>
+            <div class="step">Ml. žactvo</div>
+            <div class="arrow">➡</div>
+            <div class="step">St. žactvo</div>
+            <div class="arrow">➡</div>
+            <div class="step">Dorost</div>
+            <div class="arrow">➡</div>
+            <div class="step">Junioři</div>
+            <div class="arrow">➡</div>
+            <div class="step">Dospělí</div>
+        </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Tvůj Sportovní Klub | Všechna práva vyhrazena</p>
-        </div>
+        <p>&copy; 2026 Tvůj Atletický Klub</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
