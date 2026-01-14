@@ -348,3 +348,19 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
         height: 200px;
     }
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px; /* Toto určuje odsazení loga a menu od krajů */
+    height: 80px; /* Pevná výška lišty zajistí, že nebude "poskakovat" */
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; /* Jednotná mezera mezi odkazy */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
