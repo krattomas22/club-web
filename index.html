@@ -25,15 +25,38 @@
 
     <header class="hero-section">
         <div class="slider">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1920&q=80');">
+            <div class="slide active" style="background-image: url('foto1.jpg');">
                 <div class="slide-content">
                     <h1>ATLETIKA PRO VŠECHNY</h1>
                 </div>
             </div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1530549387631-f31f984532a9?auto=format&fit=crop&w=1920&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1552674605-46d5c4e405f8?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('foto2.jpg');"></div>
+            <div class="slide" style="background-image: url('foto3.jpg');"></div>
         </div>
+
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </header>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function changeSlide(n) {
+            showSlide(currentSlide + n);
+        }
+
+        // Automatické střídání každých 5 sekund
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
 
     <section class="news-section">
         <div class="container">
