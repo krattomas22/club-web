@@ -15,20 +15,60 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
 /* 1. NAVIGACE */
 .navbar {
     position: fixed;
-    top: 0; width: 100%;
-    background: var(--primary); /* Plná modrá lišta */
-    color: white;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 40px; box-sizing: border-box; z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    top: 0;
+    width: 100%;
+    /* Šedá barva (50,50,50) s průhledností 0.8 */
+    background: rgba(50, 50, 50, 0.8); 
+    backdrop-filter: blur(5px); /* Efekt rozmazání pozadí pod lištou (moderní sklo) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px; /* Trochu menší padding, ať není lišta obří */
+    box-sizing: border-box;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.logo { font-size: 24px; font-weight: bold; }
-.logo span { color: var(--accent); }
-.nav-links { list-style: none; display: flex; gap: 20px; margin: 0; }
-.nav-links a { color: white; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; }
-.nav-links a:hover { color: var(--accent); }
-.highlight { border: 2px solid var(--accent); padding: 5px 10px; border-radius: 4px; }
+/* Styl pro logo obrázek */
+.logo-img {
+    height: 60px; /* Nastaví výšku loga, aby se vešlo */
+    width: auto;  /* Šířka se dopočítá automaticky */
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    align-items: center; /* Zarovnání textu na střed vůči logu */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent); /* Po najetí zčervená */
+}
+
+.highlight {
+    border: 2px solid var(--accent);
+    padding: 8px 15px;
+    border-radius: 4px;
+    background: rgba(227, 6, 19, 0.2); /* Lehce červené pozadí tlačítka */
+}
+.highlight:hover {
+    background: var(--accent);
+    color: white !important;
+}
 
 /* 2. SLIDER (Půlka obrazovky) */
 .hero-section {
