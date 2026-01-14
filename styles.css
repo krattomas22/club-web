@@ -59,16 +59,17 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
     color: #0056b3; /* Pěkná sytá modrá */
 }
 
-/* Úprava tlačítka Klubové oblečení */
+/* Úprava položky Klubové oblečení - odstranění rámečku */
 .highlight {
-    border: 2px solid #0056b3; /* Modré ohraničení */
-    padding: 8px 15px;
-    border-radius: 4px;
+    border: none !important;      /* Odstraní rámeček */
+    padding: 0 !important;       /* Odstraní vnitřní odsazení */
+    background: transparent !important; /* Odstraní případné pozadí */
 }
 
+/* Aby se i toto tlačítko chovalo při najetí stejně jako ostatní */
 .highlight:hover {
-    background: #0056b3;
-    color: white !important;
+    background: transparent !important;
+    color: #0056b3 !important; /* Zmodrá jako ostatní */
 }
 
 /* 2. SLIDER (Půlka obrazovky) */
