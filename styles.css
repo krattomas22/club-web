@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+st@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
 :root {
     --primary: #003366; /* Hlavní modrá */
@@ -215,90 +215,98 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
 
 footer { background: var(--dark); color: white; text-align: center; padding: 20px; margin-top: 50px; }
 
-/* STYLY PRO STRÁNKU AKTUALIT */
+/* --- VYČIŠTĚNÉ AKTUALITY (Seznam i Detail) --- */
+
 .news-list {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: 40px auto;
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding: 0 20px;
 }
 
-.news-card {
+/* Hlavní blok aktuality v seznamu */
+.news-item {
+    display: flex; 
     background: white;
-    border-left: 5px solid #0056b3; /* Modrý pruh na boku */
-    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-radius: 4px;
+    transition: transform 0.3s ease;
+    text-decoration: none; /* Pro případ, že by celá karta byla odkaz */
+    color: inherit;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Prostor pro fotku vlevo */
+.news-image {
+    width: 300px;
+    min-width: 300px;
+    height: 220px;
+    background: #ddd; /* Pojistka, když fotka chybí */
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Textová část vpravo */
+.news-text {
+    padding: 25px;
     display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    flex-grow: 1;
 }
 
-.news-date {
-    background: #f4f4f4;
-    padding: 10px;
-    border-radius: 4px;
-    font-weight: bold;
-    min-width: 100px;
-    text-align: center;
-    font-size: 0.9em;
-    color: #555;
+.news-text .date {
+    color: var(--accent);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
 }
 
-.news-content h2 {
+.news-text h2 {
     margin: 0 0 10px 0;
-    font-family: 'Oswald', sans-serif;
-    color: #222;
+    font-size: 1.5rem;
+    color: var(--dark);
 }
 
-.news-content p {
+.news-text p {
     color: #666;
-    line-height: 1.6;
+    margin: 0 0 40px 0; /* Místo dole pro tlačítko */
+    line-height: 1.5;
 }
 
-.read-more {
-    display: inline-block;
-    margin-top: 10px;
-    color: #0056b3;
+/* Tlačítko Více */
+.more-link {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #0056b3;
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
-.read-more:hover {
-    text-decoration: underline;
+.more-link:hover {
+    background: #003d7a;
 }
 
-/* Styl pro detail článku */
-.article-detail {
-    background: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.article-text p {
-    margin-bottom: 20px;
-    line-height: 1.8;
-    color: #333;
-}
-
-/* Responzivita pro seznam aktualit (aby to na mobilu nebylo vedle sebe) */
-@media (max-width: 768px) {
-    .news-item {
-        flex-direction: column;
-    }
-    .news-image {
-        width: 100%;
-        min-width: 100%;
-        height: 250px;
-    }
-}
-
-/* Styl pro stránku s detailem článku */
+/* DETAIL ČLÁNKU (Stránka, kde se čte celý text) */
 .article-container {
     max-width: 800px;
-    margin: 120px auto 50px; /* 120px odshora kvůli liště */
+    margin: 120px auto 50px;
     padding: 0 20px;
 }
 
@@ -327,4 +335,16 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     font-size: 18px;
     line-height: 1.8;
     color: #333;
+}
+
+/* Mobilní zobrazení - fotka skočí nad text */
+@media (max-width: 768px) {
+    .news-item {
+        flex-direction: column;
+    }
+    .news-image {
+        width: 100%;
+        min-width: 100%;
+        height: 200px;
+    }
 }
