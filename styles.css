@@ -12,38 +12,35 @@ body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--white); c
 h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margin-top: 0; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* 1. NAVIGACE */
+/* 1. NAVIGACE - AKTUALIZOVANÁ VERZE */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    /* Šedá barva (50,50,50) s průhledností 0.8 */
     background: rgba(50, 50, 50, 0.8); 
-    backdrop-filter: blur(5px); /* Efekt rozmazání pozadí pod lištou (moderní sklo) */
+    backdrop-filter: blur(5px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px; /* Trochu menší padding, ať není lišta obří */
+    padding: 10px 40px;
     box-sizing: border-box;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Styl pro logo obrázek */
 .logo-img {
-    height: 50px;
+    height: 60px;
     width: auto;
     display: block;
-    background: transparent !important; /* Toto natvrdo zakáže jakékoliv pozadí */
-    border: none !important;           /* Odstraní případné rámečky */
+    background: transparent !important;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    /* Zvětšení mezery mezi nápisy */
+    gap: 40px; 
     margin: 0;
-    align-items: center; /* Zarovnání textu na střed vůči logu */
+    align-items: center;
 }
 
 .nav-links a {
@@ -54,21 +51,23 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     letter-spacing: 1px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
+/* ZMĚNA: Po najetí kurzorem nápis zmodrá */
 .nav-links a:hover {
-    color: var(--accent); /* Po najetí zčervená */
+    color: #0056b3; /* Pěkná sytá modrá */
 }
 
+/* Úprava tlačítka Klubové oblečení */
 .highlight {
-    border: 2px solid var(--accent);
+    border: 2px solid #0056b3; /* Modré ohraničení */
     padding: 8px 15px;
     border-radius: 4px;
-    background: rgba(227, 6, 19, 0.2); /* Lehce červené pozadí tlačítka */
 }
+
 .highlight:hover {
-    background: var(--accent);
+    background: #0056b3;
     color: white !important;
 }
 
