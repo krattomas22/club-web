@@ -31,9 +31,11 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
 
 /* Styl pro logo obrázek */
 .logo-img {
-    height: 60px; /* Nastaví výšku loga, aby se vešlo */
-    width: auto;  /* Šířka se dopočítá automaticky */
+    height: 50px;
+    width: auto;
     display: block;
+    background: transparent !important; /* Toto natvrdo zakáže jakékoliv pozadí */
+    border: none !important;           /* Odstraní případné rámečky */
 }
 
 .nav-links {
