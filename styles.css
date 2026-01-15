@@ -500,24 +500,34 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 .main-footer {
     margin-top: 40px !important; 
 }
-/* Mřížka pro skupiny */
-.groups-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+/* --- NOVÉ ROZLOŽENÍ SKUPIN (2 + 3 na střed) --- */
+
+.groups-wrapper {
+    display: flex;
+    flex-direction: column;
     gap: 25px;
-    margin: 50px 0;
+    margin: 50px auto;
+    max-width: 1100px;
+    padding: 0 20px;
 }
 
-/* Styl karty skupiny */
+.groups-row {
+    display: flex;
+    justify-content: center; /* Toto zajistí zarovnání na střed */
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
 .group-card {
     position: relative;
-    height: 300px;
-    background-color: #003366; /* Záložní barva */
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    height: 220px; /* Obdélník na ležato */
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background-color: #003366;
     border-radius: 12px;
     display: flex;
     align-items: flex-end;
-    padding: 20px;
     text-decoration: none;
     color: white;
     overflow: hidden;
@@ -525,36 +535,40 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.group-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-}
+/* Pozadí pro jednotlivé karty */
+.g1 { background: url('pripravka.jpg') center/cover; }
+.g2 { background: url('zactvo.jpg') center/cover; }
+.g3 { background: url('bahensky.jpg') center/cover; }
+.g4 { background: url('couf.jpg') center/cover; }
+.g5 { background: url('najbrt.jpg') center/cover; }
 
-/* Efekt při najetí - zvětšení pozadí */
-.group-card::before {
-    content: "";
+.group-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: url('atletika-bg.jpg') center/cover; /* Zde můžeš dát fotku haly/stadionu */
-    z-index: -1;
-    transition: transform 0.5s ease;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    z-index: 1;
 }
 
-.group-card:hover::before {
-    transform: scale(1.1);
+.group-info {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    text-align: left;
 }
 
 .group-info h2 {
+    color: #ffde00 !important;
     margin: 0;
-    font-size: 1.8rem;
-    color: #ffde00; /* Sokolská žlutá pro nadpis */
+    font-size: 1.6rem;
+    font-family: 'Oswald', sans-serif;
 }
 
-.group-info span {
-    font-size: 0.9rem;
-    opacity: 0.9;
+.group-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
-/* --- DETAIL TRÉNINKOVÉ SKUPINY --- */
+
+/* --- DETAIL TRÉNINKOVÉ SKUPINY (Ponecháno pro podstránky) --- */
 
 .subtitle {
     color: #666;
@@ -570,7 +584,7 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 }
 
 .group-main-info h3, .group-sidebar h3 {
-    border-bottom: 2px solid #ffde00; /* Sokolská žlutá linka */
+    border-bottom: 2px solid #ffde00;
     display: inline-block;
     margin-bottom: 15px;
     padding-bottom: 5px;
