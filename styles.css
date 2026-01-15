@@ -405,13 +405,17 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
         100% { transform: scale(0.9); opacity: 0.5; }
     }
 }
+/* --- KOMPLETNÍ PATIČKA --- */
+
+/* --- KOMPLETNÍ PATIČKA --- */
+
 .main-footer {
-    background-color: #00458e; /* Ta tvá modrá */
+    background-color: #00458e;
     color: white;
     padding: 25px 0;
-    margin-top: 100px; /* Mezera od článků */
+    margin-top: 100px;
     font-family: 'Oswald', sans-serif;
-    border-top: 3px solid #ffde00; /* Tenká sokolská žlutá linka pro detail */
+    border-top: 3px solid #ffde00; /* Žlutá linka */
 }
 
 .footer-container {
@@ -437,62 +441,29 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 
 .footer-right {
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Mezera mezi ikonami */
+    align-items: center;
 }
 
-.footer-right a {
-    color: white;
-    font-size: 1.6rem;
-    transition: 0.3s;
+.footer-icon {
+    width: 28px !important;  /* Velikost ikony */
+    height: 28px !important;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+    /* Filtr: udělá z černé bílou. Pokud jsou už bílé, nevadí to. */
+    filter: brightness(0) invert(1) !important;
 }
 
-.footer-right a:hover {
-    color: #ffde00; /* Žlutá při najetí myší */
+.footer-right a:hover .footer-icon {
     transform: scale(1.2);
 }
 
-/* Mobilní verze: na mobilu se to poskládá pod sebe */
+/* Mobilní verze */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         gap: 15px;
         text-align: center;
     }
-}
-.footer-icon {
-    width: 30px;      /* Šířka ikonky */
-    height: 30px;     /* Výška ikonky */
-    transition: transform 0.3s ease;
-    display: block;
-}
-
-.footer-right a:hover .footer-icon {
-    transform: scale(1.2); /* Zvětšení při najetí */
-}
-
-.footer-right {
-    display: flex;
-    gap: 15px; /* Mezera mezi ikonkami */
-    align-items: center;
-}
-/* --- ÚPRAVA PRO IKONY V PATIČCE --- */
-
-.footer-icon {
-    width: 24px !important;  /* Vynutí malou šířku */
-    height: 24px !important; /* Vynutí malou výšku */
-    object-fit: contain;
-    transition: transform 0.3s ease;
-    
-    /* Pokud jsou tvé ikony černé, toto je udělá bílé, aby svítily na modré */
-    filter: brightness(0) invert(1); 
-}
-
-.footer-right {
-    display: flex;
-    gap: 15px;      /* Mezera mezi IG a FB */
-    align-items: center;
-}
-
-.footer-right a:hover .footer-icon {
-    transform: scale(1.2); /* Ikonka se při najetí myší trochu zvětší */
 }
