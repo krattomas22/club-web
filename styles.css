@@ -512,24 +512,25 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 }
 
 .group-card {
-    position: relative;
+    position: relative !important;
+    display: flex !important;
     
-    /* FIXNÍ ROZMĚRY: 300x200 px */
-    width: 300px;           
-    height: 90px;
+    /* FIXNÍ ROZMĚRY */
+    width: 300px !important;           
+    height: 200px !important;
     
-    flex: 0 0 auto;         /* Zákaz zvětšování i zmenšování */
-    flex-shrink: 0;         /* Pojistka stability rozměru */
+    /* ZÁKAZ ZMĚN */
+    flex: none !important;
+    flex-shrink: 0 !important;
+    aspect-ratio: auto !important; /* Zrušíme ten předchozí poměr, aby se to nehádalo */
 
     background-color: #003366;
     border-radius: 12px;
-    display: flex;
     align-items: flex-end;
     text-decoration: none;
     color: white;
     overflow: hidden;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .groups-row {
