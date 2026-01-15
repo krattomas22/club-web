@@ -578,20 +578,26 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 
 /* Font na kartách tréninkových skupin */
 .group-info h2 {
-    color: #003366 !important; /* Čistě bílá pro maximální čitelnost */
+    color: #ffffff !important; /* TEĎ JE TO SKUTEČNĚ BÍLÁ */
     font-family: 'Oswald', sans-serif !important;
     font-weight: 700 !important;
     text-transform: uppercase;
     font-size: 1.6rem;
     margin-bottom: 5px;
-    /* Jemný stín, aby písmo nesplývalo, pokud je fotka světlá */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+    
+    /* Silnější stín, aby písmo vylezlo dopředu */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8); 
+    
+    /* Pojistka, aby text byl nad všemi filtry */
+    position: relative;
+    z-index: 10;
 }
 
 /* To samé pro ten menší text pod názvem */
 .group-info span {
-    color: #ffff00 !important;
-    opacity: 0.9;
+    color: #ffde00 !important; /* Jasně žlutá */
+    text-shadow: 1px 1px 5px rgba(0,0,0,1);
+    font-size: 1.1rem;
 }
 
 .group-card:hover {
