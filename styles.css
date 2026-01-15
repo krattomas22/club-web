@@ -516,7 +516,7 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     
     /* FIXNÍ ROZMĚRY: 300x200 px */
     width: 300px;           
-    height: 200px;
+    height: 90px;
     
     flex: 0 0 auto;         /* Zákaz zvětšování i zmenšování */
     flex-shrink: 0;         /* Pojistka stability rozměru */
