@@ -43,12 +43,9 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
-    /* Zvětšení mezery mezi nápisy */
-    gap: 40px; 
-    margin: 0;
-    align-items: center;
+    list-style: none;
+    gap: 20px;
 }
 
 /* Sjednocení fontu v navigaci */
