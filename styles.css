@@ -579,7 +579,7 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 /* Font na kartách tréninkových skupin */
 .group-info h2 {
     color: #ffffff !important; /* TEĎ JE TO SKUTEČNĚ BÍLÁ */
-    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Open Sans', sans-serif !important;
     font-weight: 700 !important;
     text-transform: uppercase;
     font-size: 1.6rem;
@@ -595,7 +595,7 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 
 /* To samé pro ten menší text pod názvem */
 .group-info span {
-    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Open Sans', sans-serif !important;
     /* Změna na jasně zářivou žlutou */
     color: #ffcc00 !important; 
     
