@@ -514,10 +514,10 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 .group-card {
     position: relative;
     
-    /* FIXNÍ VELIKOST PRO VŠECHNY STEJNÁ */
-    width: 320px;           /* Pevná šířka (můžeš upravit podle potřeby) */
-    aspect-ratio: 16 / 9;   /* Výška se dopočítá, aby byly všechny 16:9 */
-    flex: none;             /* Zákaz roztahování/smršťování */
+    /* KLÍČOVÉ NASTAVENÍ: Všechny budou mít přesně 320px */
+    width: 320px;           
+    aspect-ratio: 16 / 9;   /* Výška se dopočítá automaticky */
+    flex: none;             /* ZÁKAZ: Prohlížeč nesmí kartu zvětšit ani zmenšit */
 
     background-color: #003366;
     border-radius: 12px;
@@ -528,13 +528,14 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     overflow: hidden;
     transition: all 0.4s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 0 auto;         /* Pojistka pro vycentrování */
 }
 
 .groups-row {
     display: flex;
-    justify-content: center; /* Vycentruje karty v řadě */
-    gap: 20px;               /* Mezera mezi kartami */
-    flex-wrap: wrap;         /* Aby se na mobilu naskládaly pod sebe */
+    justify-content: center; /* Vycentruje řadu (pro 2 i 3 karty stejně) */
+    gap: 25px;               /* Mezera mezi kartami */
+    flex-wrap: wrap;
     margin-bottom: 30px;
 }
 
