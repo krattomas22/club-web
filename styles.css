@@ -446,8 +446,8 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 }
 
 .footer-icon {
-    width: 26px !important;  /* Trochu menší, aby to vypadalo lépe */
-    height: 26px !important;
+    width: 32px !important;  /* Trochu menší, aby to vypadalo lépe */
+    height: 32px !important;
     display: block;
     object-fit: contain;
     /* ŽÁDNÝ FILTER ZDE NEBUDE */
