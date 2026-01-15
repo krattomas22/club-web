@@ -380,29 +380,34 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 }
 
 @supports (animation-timeline: view()) {
-    /* Základní nastavení pro všechny prostřední články */
     .news-item {
         view-timeline-name: --item-scroll;
         view-timeline-axis: block;
         animation: wave-effect linear both;
         animation-timeline: --item-scroll;
-        animation-range: entry 10% exit 90%; 
+        /* Zvětšili jsme rozsah, aby článek začal dříve a končil později */
+        animation-range: entry -20% exit 120%; 
     }
 
-    /* PRVNÍ ČLÁNEK: Zůstane velký (1.05) od samého začátku */
+    /* První článek: Držíme ho velký od začátku */
     .news-item:first-child {
-        animation-range: entry -100% exit 90%; 
+        animation-range: entry -150% exit 120%;
     }
 
-    /* POSLEDNÍ ČLÁNEK: Zůstane velký (1.05) až do úplného konce k patičce */
+    /* Poslední článek: Držíme ho velký až do patičky */
     .news-item:last-child {
-        animation-range: entry 10% exit 200%;
+        animation-range: entry -20% exit 250%;
     }
 
     @keyframes wave-effect {
-        0% { transform: scale(0.95); opacity: 0.7; }  /* Zmírnili jsme zmenšení */
-        50% { transform: scale(1.05); opacity: 1; }   /* Největší bod */
-        100% { transform: scale(0.95); opacity: 0.7; } /* Zmírnili jsme zmenšení */
+        /* Článek je malý, když je úplně mimo dohled */
+        0% { transform: scale(0.92); opacity: 0.6; }
+        
+        /* Mezi 30% a 70% dráhy v okně zůstává MAXIMÁLNÍ (plochý vrchol) */
+        30%, 70% { transform: scale(1.05); opacity: 1; }
+        
+        /* Zmenší se, až když odjíždí pryč */
+        100% { transform: scale(0.92); opacity: 0.6; }
     }
 }
 /* --- KOMPLETNÍ PATIČKA --- */
