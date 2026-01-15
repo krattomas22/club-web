@@ -500,3 +500,57 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 .main-footer {
     margin-top: 40px !important; 
 }
+/* Mřížka pro skupiny */
+.groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 50px 0;
+}
+
+/* Styl karty skupiny */
+.group-card {
+    position: relative;
+    height: 300px;
+    background-color: #003366; /* Záložní barva */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.group-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Efekt při najetí - zvětšení pozadí */
+.group-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('atletika-bg.jpg') center/cover; /* Zde můžeš dát fotku haly/stadionu */
+    z-index: -1;
+    transition: transform 0.5s ease;
+}
+
+.group-card:hover::before {
+    transform: scale(1.1);
+}
+
+.group-info h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #ffde00; /* Sokolská žlutá pro nadpis */
+}
+
+.group-info span {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
