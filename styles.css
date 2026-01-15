@@ -459,3 +459,19 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
         text-align: center;
     }
 }
+.footer-icon {
+    width: 30px;      /* Šířka ikonky */
+    height: 30px;     /* Výška ikonky */
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.footer-right a:hover .footer-icon {
+    transform: scale(1.2); /* Zvětšení při najetí */
+}
+
+.footer-right {
+    display: flex;
+    gap: 15px; /* Mezera mezi ikonkami */
+    align-items: center;
+}
