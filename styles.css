@@ -475,3 +475,24 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     gap: 15px; /* Mezera mezi ikonkami */
     align-items: center;
 }
+/* --- ÚPRAVA PRO IKONY V PATIČCE --- */
+
+.footer-icon {
+    width: 24px !important;  /* Vynutí malou šířku */
+    height: 24px !important; /* Vynutí malou výšku */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    
+    /* Pokud jsou tvé ikony černé, toto je udělá bílé, aby svítily na modré */
+    filter: brightness(0) invert(1); 
+}
+
+.footer-right {
+    display: flex;
+    gap: 15px;      /* Mezera mezi IG a FB */
+    align-items: center;
+}
+
+.footer-right a:hover .footer-icon {
+    transform: scale(1.2); /* Ikonka se při najetí myší trochu zvětší */
+}
