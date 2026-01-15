@@ -574,7 +574,7 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 
 /* Font na kartách tréninkových skupin */
 .group-info h2 {
-    color: #ffffff !important; /* Čistě bílá pro maximální čitelnost */
+    color: #003366 !important; /* Čistě bílá pro maximální čitelnost */
     font-family: 'Oswald', sans-serif !important;
     font-weight: 700 !important;
     text-transform: uppercase;
@@ -586,7 +586,7 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 
 /* To samé pro ten menší text pod názvem */
 .group-info span {
-    color: #ffffff !important;
+    color: #ffff00 !important;
     opacity: 0.9;
 }
 
