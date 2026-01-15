@@ -45,20 +45,19 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
     align-items: center;
 }
 
-/* 2. PÍSMO - Černé */
-.nav-links a {
-    color: #000000; /* Čistě černá */
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
+/* Sjednocení fontu v navigaci */
+.nav-links li a {
+    font-family: 'Oswald', sans-serif; /* Tučný sportovní font */
+    font-weight: 700;
+    text-transform: uppercase; /* Velká písmena jako na obrázku */
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: #333;
     transition: color 0.3s ease;
 }
 
-/* 3. PŘI NAJETÍ - Modré */
-.nav-links a:hover {
-    color: #0056b3; /* Tvoje modrá */
+.nav-links li a:hover {
+    color: #00458e; /* Sokolská modrá při přejetí */
 }
 
 /* Úprava položky Klubové oblečení - odstranění rámečku */
@@ -556,18 +555,21 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     z-index: 1;
 }
 
-.group-info {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    text-align: left;
+/* Font na kartách tréninkových skupin */
+.group-info h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5rem; /* Velikost nadpisu na kartě */
+    color: #ffde00 !important; /* Žlutá barva z tvého návrhu */
+    margin-bottom: 5px;
 }
 
-.group-info h2 {
-    color: #ffde00 !important;
-    margin: 0;
-    font-size: 1.6rem;
+.group-info span {
     font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #fff;
 }
 
 .group-card:hover {
@@ -676,3 +678,5 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     max-width: 450px; /* Omezíme šířku, aby 2 karty nebyly obří */
     height: 220px;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
