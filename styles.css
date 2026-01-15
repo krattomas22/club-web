@@ -16,17 +16,23 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
 .navbar {
     position: fixed;
     top: 0;
+    left: 0; /* Dobré přidat pro jistotu */
     width: 100%;
-    /* rgba(255, 255, 255, 0.7) = bílá s 70% průhledností */
+    height: 80px; /* Pevná výška, kterou jste chtěl */
+    
+    /* Efekt skla */
     background: rgba(255, 255, 255, 0.7); 
-    backdrop-filter: blur(10px); /* Efekt rozmazaného skla */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    
+    /* Rozvržení */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px;
+    padding: 0 40px; /* Horní/dolní padding u pevné výšky raději 0, vystředí to align-items */
+    
     box-sizing: border-box;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Jemná linka pod lištou, aby nesplynula s bílým pozadím */
 }
 
 .logo-img {
@@ -347,14 +353,6 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
         min-width: 100%;
         height: 200px;
     }
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px; /* Toto určuje odsazení loga a menu od krajů */
-    height: 80px; /* Pevná výška lišty zajistí, že nebude "poskakovat" */
 }
 
 .nav-links {
