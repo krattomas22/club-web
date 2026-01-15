@@ -364,33 +364,46 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     margin: 0;
     padding: 0;
 }
-/* Definujeme animaci zvětšení */
-@keyframes focus-card {
-    from { transform: scale(0.85); opacity: 0.6; }
-    to { transform: scale(1.05); opacity: 1; }
-}
+/* --- FINÁLNÍ EFEKT: VLNA PŘI SCROLLU + HOVER --- */
 
+/* 1. Efekt při najetí myší (funguje vždy) */
 .news-item {
-    /* Propojení animace se scrollováním */
-    view-timeline-name: --item-visible;
-    view-timeline-axis: block;
-
-    animation: focus-card linear both;
-    animation-timeline: --item-visible;
-    
-    /* Animace začne, když se prvek objeví dole, 
-       vrcholí uprostřed a mizí nahoře */
-    animation-range: entry 0% cover 50%; 
-    
-    /* Přidáme plynulost, aby to neskákalo */
-    transition: transform 0.3s ease;
-}
-.news-item {
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    z-index: 1;
 }
 
 .news-item:hover {
-    transform: scale(1.05); /* Zvětší se o 5 % */
-    z-index: 10; /* Aby byl nad ostatními */
+    transform: scale(1.1) !important; /* Při najetí se zvětší ještě víc */
+    z-index: 10;
+    opacity: 1 !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* 2. Efekt vlny při scrollování (pro moderní prohlížeče) */
+@supports (animation-timeline: view()) {
+    .news-item {
+        view-timeline-name: --item-scroll;
+        view-timeline-axis: block;
+
+        animation: wave-effect linear both;
+        animation-timeline: --item-scroll;
+        
+        /* Rozsah od vstupu do okna až po jeho opuštění */
+        animation-range: entry 0% exit 100%;
+    }
+
+    @keyframes wave-effect {
+        0% { 
+            transform: scale(0.8); 
+            opacity: 0.3; 
+        }
+        50% { 
+            transform: scale(1.05); 
+            opacity: 1; 
+        }
+        100% { 
+            transform: scale(0.8); 
+            opacity: 0.3; 
+        }
+    }
 }
