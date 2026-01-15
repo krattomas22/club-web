@@ -192,11 +192,32 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
     gap: 20px;
     margin-top: 20px;
 }
+/* 1. Oprava samotných karet */
 .news-item {
     background: white;
     padding: 20px;
     border-left: 5px solid var(--primary);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* 2. Stabilizace mřížky */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    align-items: stretch !important;
+}
+
+/* 3. Pojistka proti skákání do stran */
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 .date { color: var(--accent); font-weight: bold; font-size: 0.9rem; }
 
