@@ -379,31 +379,38 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* 2. Efekt vlny při scrollování s fixem pro okraje */
+/* --- ABSOLUTNÍ FIX PRO KONCE STRÁNKY --- */
+
 @supports (animation-timeline: view()) {
     .news-item {
         view-timeline-name: --item-scroll;
         view-timeline-axis: block;
-
         animation: wave-effect linear both;
         animation-timeline: --item-scroll;
-        
-        /* Natáhneme rozsah, aby animace "začínala" dříve a "končila" později */
-        animation-range: entry -100% exit 200%;
+        /* Zvětšíme dosah animace */
+        animation-range: entry -50% exit 150%;
+    }
+
+    /* První článek: Nahoře bude vždy velký */
+    .news-item:first-child {
+        animation-range: entry 0% exit 150%;
+    }
+
+    /* Poslední článek: Dole bude vždy velký */
+    .news-item:last-child {
+        animation-range: entry -50% exit 100%;
     }
 
     @keyframes wave-effect {
-        /* Prvek je mimo obrazovku - malý */
         0% { 
             transform: scale(0.8); 
             opacity: 0.3; 
         }
-        /* Prvek je v horní, střední nebo dolní části obrazovky - velký */
-        20%, 80% { 
+        /* Široká zóna stability (článek je velký většinu času na ploše) */
+        15%, 85% { 
             transform: scale(1.05); 
             opacity: 1; 
         }
-        /* Prvek definitivně opouští obrazovku - malý */
         100% { 
             transform: scale(0.8); 
             opacity: 0.3; 
