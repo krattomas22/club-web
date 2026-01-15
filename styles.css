@@ -554,3 +554,73 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     font-size: 0.9rem;
     opacity: 0.9;
 }
+/* --- DETAIL TRÉNINKOVÉ SKUPINY --- */
+
+.subtitle {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.group-detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.group-main-info h3, .group-sidebar h3 {
+    border-bottom: 2px solid #ffde00; /* Sokolská žlutá linka */
+    display: inline-block;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.coach-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.coach-card i {
+    font-size: 2rem;
+    color: #00458e;
+}
+
+.training-schedule {
+    background: #00458e;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.training-schedule h3 { border-color: #ffde00; color: white; }
+
+.training-schedule ul {
+    list-style: none;
+    padding: 0;
+}
+
+.training-schedule li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.location-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+}
+
+/* Mobilní verze: sloupce pod sebe */
+@media (max-width: 768px) {
+    .group-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
