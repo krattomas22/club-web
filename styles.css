@@ -640,3 +640,34 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
         grid-template-columns: 1fr;
     }
 }
+/* Nadpisy sekcí */
+.section-title {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: #00458e;
+    border-bottom: 3px solid #ffde00;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Nové třídy pro fotky nových skupin */
+.g6 { background: url('rybak.jpg') center/cover; }
+.g7 { background: url('kratochvil.jpg') center/cover; }
+
+/* Úprava flexu, aby se 3 karty v řadě i 2 karty v řadě chovaly správně */
+.groups-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.group-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px; /* Omezíme šířku, aby 2 karty nebyly obří */
+    height: 220px;
+}
