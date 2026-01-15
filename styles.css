@@ -364,7 +364,7 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     margin: 0;
     padding: 0;
 }
-/* --- FINÁLNÍ EFEKT: VLNA PŘI SCROLLU + HOVER --- */
+/* --- FINÁLNÍ OPRAVENÝ EFEKT: VELKÝ I NA KONCÍCH STRÁNKY --- */
 
 /* 1. Efekt při najetí myší (funguje vždy) */
 .news-item {
@@ -373,13 +373,13 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 }
 
 .news-item:hover {
-    transform: scale(1.1) !important; /* Při najetí se zvětší ještě víc */
+    transform: scale(1.1) !important; 
     z-index: 10;
     opacity: 1 !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* 2. Efekt vlny při scrollování (pro moderní prohlížeče) */
+/* 2. Efekt vlny při scrollování s fixem pro okraje */
 @supports (animation-timeline: view()) {
     .news-item {
         view-timeline-name: --item-scroll;
@@ -388,22 +388,21 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
         animation: wave-effect linear both;
         animation-timeline: --item-scroll;
         
-        /* Rozsah od vstupu do okna až po jeho opuštění */
-        animation-range: entry 0% exit 100%;
+        /* Natáhneme rozsah, aby animace "začínala" dříve a "končila" později */
+        animation-range: entry -100% exit 200%;
     }
 
     @keyframes wave-effect {
+        /* Prvek je mimo obrazovku - malý */
         0% { 
             transform: scale(0.8); 
             opacity: 0.3; 
         }
-        50% { 
+        /* Prvek je v horní, střední nebo dolní části obrazovky - velký */
+        20%, 80% { 
             transform: scale(1.05); 
             opacity: 1; 
         }
+        /* Prvek definitivně opouští obrazovku - malý */
         100% { 
-            transform: scale(0.8); 
-            opacity: 0.3; 
-        }
-    }
-}
+            transform: scale(0.8
