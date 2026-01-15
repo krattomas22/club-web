@@ -406,11 +406,12 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     }
 }
 .main-footer {
-    background-color: #00458e;
+    background-color: #00458e; /* Ta tvá modrá */
     color: white;
-    padding: 30px 0 15px 0;
-    margin-top: 80px;
+    padding: 25px 0;
+    margin-top: 100px; /* Mezera od článků */
     font-family: 'Oswald', sans-serif;
+    border-top: 3px solid #ffde00; /* Tenká sokolská žlutá linka pro detail */
 }
 
 .footer-container {
@@ -420,64 +421,41 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    gap: 20px;
-}
-
-.footer-section p {
-    margin: 0;
-    text-transform: uppercase;
 }
 
 .sokol-name {
     font-weight: bold;
     font-size: 1.1rem;
+    margin: 0;
 }
 
-.views-count {
-    font-size: 0.8rem;
-    opacity: 0.7;
-}
-
-.address p {
+.footer-center p {
+    margin: 0;
     font-size: 0.9rem;
     opacity: 0.9;
 }
 
-/* Styl pro sociální sítě */
-.social-links {
+.footer-right {
     display: flex;
     gap: 20px;
 }
 
-.social-links a {
+.footer-right a {
     color: white;
-    font-size: 1.5rem; /* Větší ikony */
-    transition: transform 0.3s, color 0.3s;
+    font-size: 1.6rem;
+    transition: 0.3s;
 }
 
-.social-links a:hover {
-    color: #ffde00; /* Sokolská žlutá při najetí */
-    transform: translateY(-3px);
+.footer-right a:hover {
+    color: #ffde00; /* Žlutá při najetí myší */
+    transform: scale(1.2);
 }
 
-.footer-bottom {
-    text-align: center;
-    margin-top: 25px;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.75rem;
-    opacity: 0.6;
-}
-
-.footer-bottom a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Mobilní verze */
-@media (max-width: 850px) {
+/* Mobilní verze: na mobilu se to poskládá pod sebe */
+@media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
+        gap: 15px;
         text-align: center;
     }
 }
