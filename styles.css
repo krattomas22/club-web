@@ -522,10 +522,11 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 
 .group-card {
     position: relative;
-    height: 220px; /* Obdélník na ležato */
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
+    /* NASTAVENÍ POMĚRU 16:9 */
+    width: 340px;            /* Šířka zůstává stejná */
+    aspect-ratio: 16 / 9;    /* Výška se dopočítá automaticky na 16:9 */
+    
+    flex: none;              /* Aby se karty neroztahovaly */
     background-color: #003366;
     border-radius: 12px;
     display: flex;
