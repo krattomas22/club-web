@@ -12,56 +12,62 @@ body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--white); c
 h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margin-top: 0; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* 1. LIŠTA - Bílá a průhledná */
+/* --- OPRAVENÁ NAVIGACE --- */
 .navbar {
     position: fixed;
     top: 0;
-    left: 0; /* Dobré přidat pro jistotu */
+    left: 0;
     width: 100%;
-    height: 80px; /* Pevná výška, kterou jste chtěl */
+    height: 80px; /* Pevná výška */
     
     /* Efekt skla */
-    background: rgba(255, 255, 255, 0.7); 
+    background: rgba(255, 255, 255, 0.85); /* Trochu méně průhledné pro lepší čitelnost */
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     
-    /* Rozvržení */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px; /* Horní/dolní padding u pevné výšky raději 0, vystředí to align-items */
+    padding: 0 40px; 
     
     box-sizing: border-box;
-    z-index: 1000;
+    z-index: 9999; /* Extrémně vysoké číslo, aby byla vždy nad vším */
 }
 
 .logo-img {
-    height: 60px;
+    height: 60px; /* Logo se krásně vejde do 80px lišty */
     width: auto;
     display: block;
-    background: transparent !important;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 15px; /* Mezera mezi položkami */
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
-/* Sjednocení fontu v navigaci */
 .nav-links li a {
-    font-family: 'Oswald', sans-serif !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important; /* Vynutí velká písmena */
-    text-decoration: none !important;
-    font-size: 14px !important; /* Zkusíme tuhle velikost, aby se to tam vešlo */
-    letter-spacing: 0.5px !important;
-    padding: 5px 10px !important;
-    display: inline-block !important;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 15px;
+    color: #003366; /* Tvoje hlavní modrá */
+    letter-spacing: 0.5px;
+    padding: 10px 5px;
+    transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-    color: #00458e; /* Sokolská modrá při přejetí */
+    color: #e30613; /* Červená při najetí pro oživení */
+}
+
+/* Oprava pro Slider/Hero sekci pod lištou */
+.hero-section {
+    margin-top: 80px !important; /* Musí být stejné jako výška navbaru! */
 }
 
 /* Úprava položky Klubové oblečení - odstranění rámečku */
