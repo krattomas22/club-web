@@ -735,3 +735,26 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     text-align: left !important;
 }
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+/* --- NASTAVENÍ OBRÁZKŮ PRO JEDNOTLIVÉ KARTY --- */
+
+/* Přiřazení fotek podle tříd g1, g2, g3... */
+.g3 { background-image: url('bahensky.jpg') !important; }
+.g4 { background-image: url('couf.jpg') !important; }
+.g5 { background-image: url('najbrt.jpg') !important; }
+.g6 { background-image: url('rybak.jpg') !important; }
+.g7 { background-image: url('kratochvil.jpg') !important; }
+.g1 { background-image: url('pripravka.jpg') !important; }
+.g2 { background-image: url('zactvo.jpg') !important; }
+
+/* Společné nastavení pro všechny karty, aby fotky seděly */
+.group-card {
+    background-size: cover !important;     /* Fotka vyplní celé okno */
+    background-position: center !important;  /* Fotka bude vycentrovaná */
+    background-repeat: no-repeat !important; /* Nebude se opakovat */
+    position: relative;
+    overflow: hidden;
+    height: 250px; /* Pokud by se karty zdály moc nízké, můžeš upravit */
+    display: block;
+    text-decoration: none;
+}
