@@ -364,3 +364,33 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     margin: 0;
     padding: 0;
 }
+/* Definujeme animaci zvětšení */
+@keyframes focus-card {
+    from { transform: scale(0.85); opacity: 0.6; }
+    to { transform: scale(1.05); opacity: 1; }
+}
+
+.news-item {
+    /* Propojení animace se scrollováním */
+    view-timeline-name: --item-visible;
+    view-timeline-axis: block;
+
+    animation: focus-card linear both;
+    animation-timeline: --item-visible;
+    
+    /* Animace začne, když se prvek objeví dole, 
+       vrcholí uprostřed a mizí nahoře */
+    animation-range: entry 0% cover 50%; 
+    
+    /* Přidáme plynulost, aby to neskákalo */
+    transition: transform 0.3s ease;
+}
+.news-item {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.news-item:hover {
+    transform: scale(1.05); /* Zvětší se o 5 % */
+    z-index: 10; /* Aby byl nad ostatními */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
