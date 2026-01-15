@@ -380,29 +380,29 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 }
 
 @supports (animation-timeline: view()) {
-    /* Základní nastavení pro všechny články */
+    /* Základní nastavení pro všechny prostřední články */
     .news-item {
         view-timeline-name: --item-scroll;
         view-timeline-axis: block;
         animation: wave-effect linear both;
         animation-timeline: --item-scroll;
-        animation-range: entry 10% exit 90%; /* Standardní zóna */
+        animation-range: entry 10% exit 90%; 
     }
 
-    /* PRVNÍ ČLÁNEK: Začíná už "nafouknutý" */
+    /* PRVNÍ ČLÁNEK: Zůstane velký (1.05) od samého začátku */
     .news-item:first-child {
-        animation-range: entry -80% exit 90%; 
+        animation-range: entry -100% exit 90%; 
     }
 
-    /* POSLEDNÍ ČLÁNEK: Dojíždí "nafouknutý" až do konce */
+    /* POSLEDNÍ ČLÁNEK: Zůstane velký (1.05) až do úplného konce k patičce */
     .news-item:last-child {
-        animation-range: entry 10% exit 180%;
+        animation-range: entry 10% exit 200%;
     }
 
     @keyframes wave-effect {
-        0% { transform: scale(0.9); opacity: 0.5; }
-        50% { transform: scale(1.05); opacity: 1; }
-        100% { transform: scale(0.9); opacity: 0.5; }
+        0% { transform: scale(0.95); opacity: 0.7; }  /* Zmírnili jsme zmenšení */
+        50% { transform: scale(1.05); opacity: 1; }   /* Největší bod */
+        100% { transform: scale(0.95); opacity: 0.7; } /* Zmírnili jsme zmenšení */
     }
 }
 /* --- KOMPLETNÍ PATIČKA --- */
