@@ -406,12 +406,11 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     }
 }
 .main-footer {
-    background-color: #00458e; /* Sokolská modrá */
+    background-color: #00458e;
     color: white;
-    padding: 40px 0 20px 0;
-    margin-top: 50px; /* Mezera od posledního článku */
+    padding: 30px 0 15px 0;
+    margin-top: 80px;
     font-family: 'Oswald', sans-serif;
-    width: 100%;
 }
 
 .footer-container {
@@ -421,31 +420,64 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    gap: 20px;
 }
 
-.footer-info p {
-    margin: 5px 0;
+.footer-section p {
+    margin: 0;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-.footer-links a {
+.sokol-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.views-count {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.address p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Styl pro sociální sítě */
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem; /* Větší ikony */
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ffde00; /* Sokolská žlutá při najetí */
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.footer-bottom a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
-    opacity: 0.8;
-    transition: opacity 0.3s;
 }
 
-.footer-links a:hover {
-    opacity: 1;
-}
-
-/* Aby patička na malých mobilech nebyla rozbitá */
-@media (max-width: 600px) {
+/* Mobilní verze */
+@media (max-width: 850px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
     }
 }
