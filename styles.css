@@ -18,35 +18,39 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px; /* Pevná výška */
     
-    /* Efekt skla */
-    background: rgba(255, 255, 255, 0.85); /* Trochu méně průhledné pro lepší čitelnost */
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* 1. VÝŠKA LIŠTY: Zkuste 60px pro tenčí, 100px pro tlustší */
+    height: 80px; 
+    
+    /* 2. BARVA POZADÍ: 
+       rgba(255, 255, 255, 0.9) = Bílá, skoro neprůhledná
+       #003366 = Tmavě modrá (pokud chcete barevnou lištu)
+       Pokud chcete vidět "sklo", musí být to poslední číslo menší (např. 0.7) */
+    background: rgba(255, 255, 255, 0.95); 
+
+    /* Stín pod lištou - pomůže ji oddělit od zbytku stránky */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px; 
+
+    /* 3. MEZERY OD KRAJŮ OBRAZOVKY (vlevo a vpravo) */
+    padding: 0 50px; 
     
     box-sizing: border-box;
-    z-index: 9999; /* Extrémně vysoké číslo, aby byla vždy nad vším */
-}
-
-.logo-img {
-    height: 60px; /* Logo se krásně vejde do 80px lišty */
-    width: auto;
-    display: block;
+    z-index: 1000;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 15px; /* Mezera mezi položkami */
+    align-items: center;
     margin: 0;
     padding: 0;
-    align-items: center;
+
+    /* 4. MEZERA MEZI JEDNOTLIVÝMI ODKAZY (Slova v menu) */
+    gap: 30px; /* Zvětšete na 40px nebo 50px, pokud je chcete dál od sebe */
 }
 
 .nav-links li a {
@@ -54,15 +58,17 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 15px;
-    color: #003366; /* Tvoje hlavní modrá */
-    letter-spacing: 0.5px;
-    padding: 10px 5px;
-    transition: color 0.3s ease;
+    
+    /* 5. BARVA PÍSMA V MENU */
+    color: #003366; /* Tmavě modrá */
+    font-size: 15px; /* Velikost písma */
+    
+    transition: 0.3s;
 }
 
 .nav-links li a:hover {
-    color: #e30613; /* Červená při najetí pro oživení */
+    /* 6. BARVA PŘI NAJETÍ MYŠÍ */
+    color: #e30613; /* Červená */
 }
 
 /* Oprava pro Slider/Hero sekci pod lištou */
