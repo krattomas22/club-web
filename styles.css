@@ -446,17 +446,19 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 }
 
 .footer-icon {
-    width: 28px !important;  /* Velikost ikony */
-    height: 28px !important;
-    object-fit: contain;
+    width: 26px !important;  /* Trochu menší, aby to vypadalo lépe */
+    height: 26px !important;
     display: block;
-    transition: transform 0.3s ease;
-    /* Filtr: udělá z černé bílou. Pokud jsou už bílé, nevadí to. */
-    filter: brightness(0) invert(1) !important;
+    object-fit: contain;
+    /* ŽÁDNÝ FILTER ZDE NEBUDE */
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-.footer-right a:hover .footer-icon {
-    transform: scale(1.2);
+.footer-right a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 /* Mobilní verze */
