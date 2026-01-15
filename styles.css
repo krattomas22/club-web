@@ -595,9 +595,20 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 
 /* To samé pro ten menší text pod názvem */
 .group-info span {
-    color: #ffde00 !important; /* Jasně žlutá */
-    text-shadow: 1px 1px 5px rgba(0,0,0,1);
+    font-family: 'Oswald', sans-serif !important;
+    /* Změna na jasně zářivou žlutou */
+    color: #ffcc00 !important; 
+    
+    font-weight: 400;
     font-size: 1.1rem;
+    text-transform: uppercase;
+    
+    /* Vytáhnutí textu nad šedou clonu */
+    position: relative;
+    z-index: 10;
+    
+    /* Černý stín pro lepší čitelnost */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
 }
 
 .group-card:hover {
