@@ -74,6 +74,11 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
     /* 6. BARVA PŘI NAJETÍ MYŠÍ */
     color: #003366; /* Černá */
 }
+/* Styl pro aktivní stránku - nápis zůstane modrý */
+.nav-links li a.active {
+    color: #003366 !important; /* Tvoje modrá */
+    border-bottom: 2px solid #003366; /* Volitelné: přidá pod nápis modrou linku */
+}
 
 /* Oprava pro Slider/Hero sekci pod lištou */
 .hero-section {
