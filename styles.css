@@ -60,7 +60,7 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
     
     text-transform: uppercase;
     text-decoration: none;
-    color: #003366;
+    color: #000000;
     font-size: 15px;
     
     /* Zrušení těch velkých mezer mezi písmeny */
@@ -72,7 +72,7 @@ h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margi
 
 .nav-links li a:hover {
     /* 6. BARVA PŘI NAJETÍ MYŠÍ */
-    color: #e30613; /* Červená */
+    color: #003366; /* Černá */
 }
 
 /* Oprava pro Slider/Hero sekci pod lištou */
