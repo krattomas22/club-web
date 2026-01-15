@@ -467,3 +467,31 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
         text-align: center;
     }
 }
+.end-of-content {
+    text-align: center;
+    margin: 60px auto 20px auto;
+    max-width: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.end-of-content::before,
+.end-of-content::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+    margin: 0 20px;
+}
+
+/* Úprava mezery u patičky, aby to nebylo moc nalepené */
+.main-footer {
+    margin-top: 40px !important; 
+}
