@@ -597,7 +597,7 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 .group-info span {
     font-family: 'Open Sans', sans-serif !important;
     /* Změna na jasně zářivou žlutou */
-    color: #ffcc00 !important; 
+    color: #ffffff !important; 
     
     font-weight: 400;
     font-size: 1.1rem;
