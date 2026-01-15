@@ -512,10 +512,12 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 }
 
 .groups-row {
-    display: flex;
-    justify-content: center; /* Toto zajistí zarovnání na střed */
-    gap: 25px;
-    flex-wrap: wrap;
+    display: flex;            /* Toto řadí karty vedle sebe */
+    flex-direction: row;      /* Vynutí vodorovný směr */
+    justify-content: center;  /* Zarovná je na střed */
+    gap: 25px;                /* Mezera mezi nimi */
+    width: 100%;
+    margin-bottom: 25px;      /* Mezera mezi horní a spodní řadou */
 }
 
 .group-card {
