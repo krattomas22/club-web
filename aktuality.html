@@ -173,7 +173,7 @@ async function nactiAktuality() {
         const response = await fetch(url);
         const soubory = await response.json();
         
-        soubory.reverse(); // Nejnovější nahoře
+       
 
         for (const soubor of soubory) {
             const res = await fetch(soubor.download_url);
@@ -209,7 +209,7 @@ async function nactiAktuality() {
                     <a href="#" class="more-link">Více</a>
                 </div>
             `;
-            container.appendChild(clanek);
+            container.prepend(clanek);
         }
     } catch (chyba) {
         console.error("Chyba:", chyba);
