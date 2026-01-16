@@ -565,7 +565,7 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 
 /* Pozadí pro jednotlivé karty */
 .g1 { background: url('obrazky/pripravka.jpg') center/cover; }
-.g2 { background: url('obrazky/zactvo.jpg') center/cover; }
+.g2 { background: url('zactvo.jpg') center/cover; }
 .g3 { background: url('obrazky/bahensky.jpg') center/cover; }
 .g4 { background: url('obrazky/couf.jpg') center/cover; }
 .g5 { background: url('obrazky/najbrt.jpg') center/cover; }
@@ -750,7 +750,7 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 .g6 { background-image: url('obrazky/rybak.jpg') !important; }
 .g7 { background-image: url('obrazky/kratochvil.jpg') !important; }
 .g1 { background-image: url('obrazky/pripravka.jpg') !important; }
-.g2 { background-image: url('obrazky/zactvo.jpg') !important; }
+.g2 { background-image: url('zactvo.jpg') !important; }
 
 /* Společné nastavení pro všechny karty, aby fotky seděly */
 .group-card {
