@@ -564,11 +564,11 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 }
 
 /* Pozadí pro jednotlivé karty */
-.g1 { background: url('pripravka.jpg') center/cover; }
-.g2 { background: url('zactvo.jpg') center/cover; }
-.g3 { background: url('bahensky.jpg') center/cover; }
-.g4 { background: url('couf.jpg') center/cover; }
-.g5 { background: url('najbrt.jpg') center/cover; }
+.g1 { background: url('obrazky/pripravka.jpg') center/cover; }
+.g2 { background: url('obrazky/zactvo.jpg') center/cover; }
+.g3 { background: url('obrazky/bahensky.jpg') center/cover; }
+.g4 { background: url('obrazky/couf.jpg') center/cover; }
+.g5 { background: url('obrazky/najbrt.jpg') center/cover; }
 
 .group-overlay {
     position: absolute;
@@ -704,8 +704,8 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 }
 
 /* Nové třídy pro fotky nových skupin */
-.g6 { background: url('rybak.jpg') center/cover; }
-.g7 { background: url('kratochvil.jpg') center/cover; }
+.g6 { background: url('obrazky/rybak.jpg') center/cover; }
+.g7 { background: url('obrazky/kratochvil.jpg') center/cover; }
 
 /* Úprava flexu, aby se 3 karty v řadě i 2 karty v řadě chovaly správně */
 .groups-row {
@@ -744,13 +744,13 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
 /* --- NASTAVENÍ OBRÁZKŮ PRO JEDNOTLIVÉ KARTY --- */
 
 /* Přiřazení fotek podle tříd g1, g2, g3... */
-.g3 { background-image: url('bahensky.jpg') !important; }
-.g4 { background-image: url('couf.jpg') !important; }
-.g5 { background-image: url('najbrt.jpg') !important; }
-.g6 { background-image: url('rybak.jpg') !important; }
-.g7 { background-image: url('kratochvil.jpg') !important; }
-.g1 { background-image: url('pripravka.jpg') !important; }
-.g2 { background-image: url('zactvo.jpg') !important; }
+.g3 { background-image: url('obrazky/bahensky.jpg') !important; }
+.g4 { background-image: url('obrazky/couf.jpg') !important; }
+.g5 { background-image: url('obrazky/najbrt.jpg') !important; }
+.g6 { background-image: url('obrazky/rybak.jpg') !important; }
+.g7 { background-image: url('obrazky/kratochvil.jpg') !important; }
+.g1 { background-image: url('obrazky/pripravka.jpg') !important; }
+.g2 { background-image: url('obrazky/zactvo.jpg') !important; }
 
 /* Společné nastavení pro všechny karty, aby fotky seděly */
 .group-card {
