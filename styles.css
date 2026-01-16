@@ -834,3 +834,20 @@ footer { background: var(--dark); color: white; text-align: center; padding: 20p
     color: #00458e;
     transform: translateX(5px);
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1 0 auto;
+}
+
+.main-footer {
+    flex-shrink: 0;
+}
