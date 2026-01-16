@@ -851,3 +851,20 @@ body {
 .main-footer {
     flex-shrink: 0;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1 0 auto; /* To zajistí, že obsah vyplní prostor a patička bude dole */
+}
+
+.main-footer {
+    flex-shrink: 0; /* Patička se nebude zmenšovat */
+}
