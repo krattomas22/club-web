@@ -169,32 +169,36 @@
 async function nactiAktuality() {
     const container = document.getElementById('news-container');
     try {
+        // Tvá správná adresa
         const url = 'https://api.github.com/repos/krattomas22/club-web/contents/data/aktuality';
         const response = await fetch(url);
         const soubory = await response.json();
-        soubory.reverse();
+        
+        soubory.reverse(); // Nejnovější nahoře
 
         for (const soubor of soubory) {
             const res = await fetch(soubor.download_url);
             const text = await res.text();
             
-            // Hledání dat v souboru
             const radky = text.split('\n');
             const titulek = radky.find(r => r.startsWith('title:'))?.replace('title: ', '').replace(/"/g, '') || 'Aktualita';
             const datumRaw = radky.find(r => r.startsWith('date:'))?.replace('date: ', '') || '';
-            // Hledáme obrázek, pokud není, dáme tam logo nebo prázdné
-            let imgPath = radky.find(r => r.startsWith('thumbnail:'))?.replace('thumbnail: ', '').replace(/"/g, '').trim();
-            
-            // Pokud aktualita nemá fotku, použijeme tuto univerzální (změň si název podle sebe)
-            if (!imgPath) imgPath = 'obrazky/logo.png'; 
-
             const obsah = radky.slice(radky.indexOf('---', 2) + 1).join('\n');
             const datum = new Date(datumRaw).toLocaleDateString('cs-CZ');
 
+            // Hledáme obrázek. Pokud není, dáme tam logo (uprav si cestu k logu, pokud je jiná)
+            let imgPath = radky.find(r => r.startsWith('thumbnail:'))?.replace('thumbnail: ', '').replace(/"/g, '').trim();
+            if (!imgPath) {
+                imgPath = 'obrazky/logo.png'; // ZÁLOŽNÍ OBRÁZEK
+            } else {
+                // Ošetření cesty, pokud by začínala lomítkem
+                if (imgPath.startsWith('/')) imgPath = imgPath.substring(1);
+            }
+
             const clanek = document.createElement('article');
-            clanek.className = 'news-item';
+            clanek.className = 'news-item'; // Tímto se aktivuje tvůj CSS styl
             
-            // Tady vytváříme přesně tu strukturu, co máš v HTML (obrázek vlevo, text vpravo)
+            // Tady vytváříme HTML přesně tak, jak ho máš ve statické části
             clanek.innerHTML = `
                 <div class="news-image">
                     <img src="${imgPath}" alt="${titulek}">
