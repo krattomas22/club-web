@@ -14,4 +14,5 @@ collections:
     fields:
       - {label: "Nadpis", name: "title", widget: "string"}
       - {label: "Datum", name: "date", widget: "datetime"}
+      - {label: "Náhledový obrázek", name: "thumbnail", widget: "image", required: false}
       - {label: "Text aktuality", name: "body", widget: "markdown"}
