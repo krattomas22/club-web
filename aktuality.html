@@ -169,40 +169,47 @@
 async function nactiAktuality() {
     const container = document.getElementById('news-container');
     try {
-        // Změň 'UZIVATEL' a 'REPO' na své údaje z GitHubu
         const url = 'https://api.github.com/repos/krattomas22/club-web/contents/data/aktuality';
         const response = await fetch(url);
         const soubory = await response.json();
-        
-        // Chceme nejnovější nahoře
         soubory.reverse();
 
         for (const soubor of soubory) {
             const res = await fetch(soubor.download_url);
             const text = await res.text();
             
-            // Zpracování dat ze souboru (Markdown frontmatter)
+            // Hledání dat v souboru
             const radky = text.split('\n');
             const titulek = radky.find(r => r.startsWith('title:'))?.replace('title: ', '').replace(/"/g, '') || 'Aktualita';
             const datumRaw = radky.find(r => r.startsWith('date:'))?.replace('date: ', '') || '';
+            // Hledáme obrázek, pokud není, dáme tam logo nebo prázdné
+            let imgPath = radky.find(r => r.startsWith('thumbnail:'))?.replace('thumbnail: ', '').replace(/"/g, '').trim();
+            
+            // Pokud aktualita nemá fotku, použijeme tuto univerzální (změň si název podle sebe)
+            if (!imgPath) imgPath = 'obrazky/logo.png'; 
+
             const obsah = radky.slice(radky.indexOf('---', 2) + 1).join('\n');
             const datum = new Date(datumRaw).toLocaleDateString('cs-CZ');
 
-            // Vytvoření stejné struktury, jakou už máš na webu
             const clanek = document.createElement('article');
             clanek.className = 'news-item';
+            
+            // Tady vytváříme přesně tu strukturu, co máš v HTML (obrázek vlevo, text vpravo)
             clanek.innerHTML = `
+                <div class="news-image">
+                    <img src="${imgPath}" alt="${titulek}">
+                </div>
                 <div class="news-text">
                     <span class="date">${datum}</span>
                     <h2>${titulek}</h2>
                     <p>${obsah}</p>
+                    <a href="#" class="more-link">Více</a>
                 </div>
             `;
-            // Vloží novou zprávu na začátek seznamu
-            container.prepend(clanek);
+            container.appendChild(clanek);
         }
     } catch (chyba) {
-        console.error("Nepodařilo se načíst novinky:", chyba);
+        console.error("Chyba:", chyba);
     }
 }
 nactiAktuality();
