@@ -2,29 +2,31 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Tréninkové skupiny | Sokol ČB</title>
+    <title>Kontakty | Sokol ČB</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="logo">
-        <a href="index.html">
-            <img src="obrazky/logo.png" alt="Logo" class="logo-img">
-        </a>
-    </div>
-    <ul class="nav-links">
-    <li><a href="index.html">Domů</a></li>
-    <li><a href="aktuality.html">Aktuality</a></li>
-    <li><a href="skupiny.html">Tréninkové skupiny</a></li>
-    <li><a href="kontakty.html" class="active">Kontakty</a></li>
-    <li><a href="dokumenty.html">Dokumenty</a></li>
-    <li><a href="obleceni.html">Klubové oblečení</a></li>
-</ul>
-</nav>
+    <div class="main-content" style="padding-top: 110px; flex: 1 0 auto;">
+        
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="obrazky/logo.png" alt="Logo" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="aktuality.html">Aktuality</a></li>
+                <li><a href="skupiny.html">Tréninkové skupiny</a></li>
+                <li><a href="kontakty.html" class="active">Kontakty</a></li>
+                <li><a href="dokumenty.html">Dokumenty</a></li>
+                <li><a href="obleceni.html">Klubové oblečení</a></li>
+            </ul>
+        </nav>
 
-
-<section class="section">
+        <section class="section">
             <div class="container">
                 
                 <div class="contact-header" style="text-align: center; margin-bottom: 50px;">
@@ -81,15 +83,6 @@
                     </div>
                 </div>
 
-               <section class="section">
-            <div class="container">
-                
-                <div class="contact-header" style="text-align: center; margin-bottom: 50px;">
-                    <h1 style="font-size: 2.5rem; font-weight: bold; text-transform: uppercase;">Vedení klubu</h1>
-                    <p style="font-size: 1.2rem; color: #666; margin-top: -10px;">Výbor oddílu</p>
-                    <hr style="width: 100px; border: 1px dashed #ccc; margin: 20px auto;">
-                </div>
-
                 <div class="form-section" style="border-top: 1px dashed #ccc; padding-top: 50px; text-align: center; margin-bottom: 50px;">
                     <h2 style="font-size: 2.5rem; font-weight: bold; text-transform: uppercase;">Napište nám</h2>
                     <p style="margin-bottom: 30px;">Můžete nás kontaktovat také prostřednictvím tohoto formuláře:</p>
@@ -119,43 +112,26 @@
                             <label>Zpráva: *</label>
                             <textarea name="zprava" required style="width: 100%; height: 150px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background: #f9f9f9;"></textarea>
                         </div>
-                        
                         <input type="text" name="_gotcha" style="display:none">
-
                         <button type="submit" style="background: #e30613; color: #fff; border: none; padding: 12px 30px; border-radius: 4px; font-weight: bold; cursor: pointer;">Odeslat</button>
                     </form>
                 </div>
             </div>
         </section>
-    </div>
-
-    <footer class="main-footer" style="background: #00458e; color: white; padding: 25px 0; flex-shrink: 0;">
+    </div> <footer class="main-footer" style="background: #00458e; color: white; padding: 25px 0; flex-shrink: 0;">
         <div class="footer-container" style="display: flex; justify-content: space-around; align-items: center; max-width: 1200px; margin: 0 auto; text-align: center;">
-            <p style="margin: 0;">T. J. Sokol České Budějovice</p>
-            <p style="margin: 0;"><i class="fas fa-map-marker-alt"></i> Ulice č.p., PSČ Město</p>
-            <div class="socials">
-                <a href="#" style="color: white; margin-left: 15px;"><i class="fab fa-instagram fa-lg"></i></a>
-                <a href="#" style="color: white; margin-left: 15px;"><i class="fab fa-facebook fa-lg"></i></a>
-            </div>
-        </div>
-    </footer>
-
-
-  
-    <footer class="main-footer">
-        <div class="footer-container">
             <div class="footer-left">
-                <p class="sokol-name">T. J. Sokol České Budějovice</p>
+                <p style="margin: 0;">T. J. Sokol České Budějovice</p>
             </div>
             <div class="footer-center">
-                <p><i class="fas fa-map-marker-alt"></i> Sokolský ostrov 462, 370 01 České Budějovice 1</p>
+                <p style="margin: 0;"><i class="fas fa-map-marker-alt"></i> Sokolský ostrov 462, 370 01 ČB 1</p>
             </div>
             <div class="footer-right">
-                <a href="https://www.instagram.com/atletikasokolcb/" target="_blank">
-                    <img src="obrazky/instagram.png" alt="Instagram" class="footer-icon">
+                <a href="https://www.instagram.com/atletikasokolcb/" target="_blank" style="color: white; margin-left: 15px;">
+                    <i class="fab fa-instagram fa-lg"></i>
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=100086459044947" target="_blank">
-                    <img src="obrazky/facebook.png" alt="Facebook" class="footer-icon">
+                <a href="https://www.facebook.com/profile.php?id=100086459044947" target="_blank" style="color: white; margin-left: 15px;">
+                    <i class="fab fa-facebook fa-lg"></i>
                 </a>
             </div>
         </div>
