@@ -30,7 +30,8 @@
     <div class="container">
         <h1 style="font-family: 'Oswald'; text-align: center; margin-bottom: 40px;">VŠECHNY AKTUALITY</h1>
         
-        <div class="news-list">
+        <div class="news-list" id="news-container">
+    </div>
 
             <article class="news-item">
                 <div class="news-image">
@@ -164,6 +165,48 @@
     </div>
 </footer>
 
+<script>
+async function nactiAktuality() {
+    const container = document.getElementById('news-container');
+    try {
+        // Změň 'UZIVATEL' a 'REPO' na své údaje z GitHubu
+        const url = 'https://api.github.com/repos/krattomashs/club-web/contents/data/aktuality';
+        const response = await fetch(url);
+        const soubory = await response.json();
+        
+        // Chceme nejnovější nahoře
+        soubory.reverse();
+
+        for (const soubor of soubory) {
+            const res = await fetch(soubor.download_url);
+            const text = await res.text();
+            
+            // Zpracování dat ze souboru (Markdown frontmatter)
+            const radky = text.split('\n');
+            const titulek = radky.find(r => r.startsWith('title:'))?.replace('title: ', '').replace(/"/g, '') || 'Aktualita';
+            const datumRaw = radky.find(r => r.startsWith('date:'))?.replace('date: ', '') || '';
+            const obsah = radky.slice(radky.indexOf('---', 2) + 1).join('\n');
+            const datum = new Date(datumRaw).toLocaleDateString('cs-CZ');
+
+            // Vytvoření stejné struktury, jakou už máš na webu
+            const clanek = document.createElement('article');
+            clanek.className = 'news-item';
+            clanek.innerHTML = `
+                <div class="news-text">
+                    <span class="date">${datum}</span>
+                    <h2>${titulek}</h2>
+                    <p>${obsah}</p>
+                </div>
+            `;
+            // Vloží novou zprávu na začátek seznamu
+            container.prepend(clanek);
+        }
+    } catch (chyba) {
+        console.error("Nepodařilo se načíst novinky:", chyba);
+    }
+}
+nactiAktuality();
+</script>
 </body> </html>
 </body>
 </html>
