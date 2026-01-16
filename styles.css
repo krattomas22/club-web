@@ -868,7 +868,4 @@ body {
 .main-footer {
     flex-shrink: 0; /* Patička se nebude zmenšovat */
 }
-/* Toto vytvoří mezeru nahoře na každé stránce, aby text nelezl pod menu */
-.main-content {
-    padding-top: 100px; 
-}
+
