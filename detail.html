@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail aktuality | Atletický Klub</title>
+    <link rel="stylesheet" href="styles.css"> <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav style="background: #002147; padding: 20px; color: white; text-align: center;">
+        <a href="index.html" style="color: white; text-decoration: none; margin: 0 10px;">DOMŮ</a>
+        <a href="aktuality.html" style="color: white; text-decoration: none; margin: 0 10px;">AKTUALITY</a>
+    </nav>
+
+    <main style="margin-top: 50px; padding: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        
+        <a href="aktuality.html" style="display: inline-block; margin-bottom: 20px; color: #002147; text-decoration: none;">← Zpět na aktuality</a>
+
+        <div id="detail-container">
+            <p>Načítám článek...</p>
+        </div>
+
+    </main>
+
+    <script>
+    async function nactiDetail() {
+        // 1. Zjistíme, jaký soubor máme otevřít (z adresy v prohlížeči)
+        const params = new URLSearchParams(window.location.search);
+        const souborNazev = params.get('id'); // Získáme název souboru, např. "2026-01-16-hola.md"
+
+        if (!souborNazev) {
+            document.getElementById('detail-container').innerHTML = "<p>Článek nebyl nalezen.</p>";
+            return;
+        }
+
+        // 2. Sestavíme adresu k "surovému" souboru na GitHubu
+        // POZOR: Tady musí být tvé jméno a repo: krattomas22/club-web
+        const url = `https://raw.githubusercontent.com/krattomas22/club-web/main/data/aktuality/${souborNazev}`;
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error("Soubor neexistuje");
+            const text = await response.text();
+
+            // 3. Rozparsujeme text (stejně jako v aktuality.html)
+            const radky = text.split('\n');
+            const titulek = radky.find(r => r.startsWith('title:'))?.replace('title: ', '').replace(/"/g, '') || 'Bez názvu';
+            const datumRaw = radky.find(r => r.startsWith('date:'))?.replace('date: ', '') || '';
+            let imgPath = radky.find(r => r.startsWith('thumbnail:'))?.replace('thumbnail: ', '').replace(/"/g, '').trim();
+            
+            // Záložní obrázek
+            if (!imgPath) imgPath = 'obrazky/logo.png'; 
+            else if (imgPath.startsWith('/')) imgPath = imgPath.substring(1);
+
+            const obsah = radky.slice(radky.indexOf('---', 2) + 1).join('<br>'); // <br> zajistí odřádkování
+            const datum = new Date(datumRaw).toLocaleDateString('cs-CZ');
+
+            // 4. Vložíme to do stránky
+            const html = `
+                <article class="news-detail">
+                    <h1 style="font-family: 'Oswald'; font-size: 2.5em; color: #002147;">${titulek}</h1>
+                    <p style="color: gray; margin-bottom: 20px;">${datum}</p>
+                    
+                    <img src="${imgPath}" alt="${titulek}" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 8px; margin-bottom: 30px;">
+                    
+                    <div style="font-family: 'Roboto'; line-height: 1.6; font-size: 1.1em;">
+                        ${obsah}
+                    </div>
+                </article>
+            `;
+            document.getElementById('detail-container').innerHTML = html;
+
+        } catch (chyba) {
+            document.getElementById('detail-container').innerHTML = "<p>Omlouváme se, článek se nepodařilo načíst.</p>";
+            console.error(chyba);
+        }
+    }
+    nactiDetail();
+    </script>
+
+</body>
+</html>
